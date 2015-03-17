@@ -1,0 +1,290 @@
+Format: 1.8
+Date: Tue, 17 Mar 2015 06:03:33 +0530
+Source: rtai
+Binary: rtai-modules-3.4-10-rtai-686-pae
+Architecture: source
+Version: 3.9.265.gd99c55e
+Distribution: utopic
+Urgency: low
+Maintainer: Sebastian Kuzminsky <seb@highlab.com>
+Changed-By: root <root@saket-HP-Pavilion-g6-Notebook-PC>
+Description:
+ rtai-modules-3.4-10-rtai-686-pae - RTAI Real Time modules for linux-image 3.4-10-rtai-686-pae
+Changes:
+ rtai (3.9.265.gd99c55e) utopic; urgency=low
+ .
+   * enable rtai serial driver
+   * Revert "conflict with rtai-modules-3.4-9 too"
+   * conflict with rtai-modules-3.4-9 too
+   * conflict with all other versions of rtai-modules
+   * deb: comment the configure script a bit
+   * deb: less verbose changlog updating
+   * fix update-dch copypaste error
+   * deb: generate debian/rules and debian/control (and changelog)
+       dynamically
+   * only ignore configure in the root of the tree
+   * deb: remove my old bogus changelog
+   * fix the package name to match the kernel image name
+   * Fix parsing of Linux Makefile in configure.ac.
+   * deb: hardcode i386 architecture for now
+   * deb: configure for the proper host architecture
+   * deb: clean up kernel config variables
+   * deb: target 3.4-9-rtai-686-pae
+   * deb: add missing build-dependency on automake
+   * INCOMPLETE: building the dsc runs "make clean", so it better work
+   * deb: use correct kernel version
+   * configure: default to the linux-dir .config
+   * subst LINUX_CONFIG_FILE into GNUmakefile
+   * deb: pass the right args to configure
+   * teach configure how to get the kernel config file
+   * comment out the kernel config load for now
+   * update for 3.4-9-rtai, and add libtool
+   * autogen.sh: dont run configure in a bogus way
+   * update debian changelog
+   * update notes on how to build rtai
+   * include shlibs info so liblxrt is usable
+   * be more careful about package version
+   * make my build notes match reality a little better
+   * new kernel version
+   * deb: update changelog & control
+   * notes on how i build rtai for linuxcnc
+   * deb: update debian metadata
+   * deb: enable rtai features needed for linuxcnc
+   * deb: disable rtai features not used by linuxcnc
+   * deb: point rtai at the correct kconfig file
+   * deb: build against the running kernel by default
+   * deb: rtai config reorg for clarity
+   * deb: whitespace change for clarity
+   * deb: use autoconf to regenerate the configure file when building
+   * add deb files from lucid rtai_3.8.1 package
+   * Update docs
+   * Update configs
+   * Merge branch 'dev'
+   * Merge remote-tracking branch 'origin/master'
+   * Removed unnecessary definitions
+   * rt_get_exectime didn't have to be native
+   * Check whether timers exist
+   * Remove remaining 2.4 and 2.6 kernel patches
+   * Merge branch 'magma'
+   * Update magma (August 3 2013)
+   * Update copyright headers
+   * ARTI is not a typo
+   * Remove unneeded files
+   * Some configuration defaults
+   * __devinit removed since kernel 3.8
+   * Fixed libtool error
+   * Fix patch fuzz
+   * Fix whitespace in ChangeLog
+   * Merge branch 'magma'
+   * Update magma (August 2 2013)
+   * Fix whitespace for ChangeLog
+   * Merge branch 'magma'
+   * Update magma (August 1 2013)
+   * Whitespace fixes for 3.4.55
+   * Remove ugly // comments
+   * Change -rtai to -RTAI
+   * bump to 3.4.55
+   * Clean up hal_x86.c
+   * Removed duplicate code from a previous merge
+   * Unresolved merge comflicts resolved
+   * Merge with magma
+   * Updated to magma Jul 28, 2013
+   * Merge remote-tracking branch 'origin/master'
+   * Fix back rt_get_exectime
+   * Fix EXTRA_DIST variable. oops
+   * Start unifying 32 and 64 more
+   * Fix copypasta
+   * Update real docs
+   * Add more CPU stuff
+   * Support more stuff in configs
+   * Remove trailing periods
+   * Clean-up hal_64.c
+   * Fix copyright header in hal_32.c
+   * Clean up hal_32.c
+   * Re-enable direct vectoring of interrupts
+   * Add missing line
+   * Fix up kernel configs a bit
+   * Update documentation
+   * Re-enable SSE2 for x86_64
+   * Whitespace fix for configure.ac
+   * More whitespace fixes for READMEs
+   * Whitespace fix for READMEs
+   * More hidden whitespace...
+   * More whitespace fixes
+   * Whitespace fix
+   * Remove unneeded if
+   * Silence warnings for paranoid toolchains
+   * Merge branch 'magma'
+   * Update magma (July 18 2013)
+   * Fix 64-bit kernel builds on 3.4.53
+   * Update README.SMI
+   * Removed dead-code under #if LINUX_VERSION_CODE ...
+   * rtai: only initialize timers on cpus that are present
+   * Basically 3.8.13
+   * Broken since 2.6 has been dropped
+   * Fix math support building
+   * Purge in-kernel RTAI C++ support
+   * Fix 3.8 kernel support
+   * Revert "APIC is for x86 only (i think)"
+   * APIC is for x86 only (i think)
+   * Bump to 3.4.53
+   * Fixed the problem where lxdialog was being rebuilt every time
+   * Fixed an issue with initial generation of .rtai_config file
+   * Change RTAI defaults for x86
+   * Add kernel 3.4.51 support
+   * Force install of atomic headers
+   * Prepare for 3.4.52 support
+   * Fix a typo (and a configure warning)
+   * Fix multiple compiling errors
+   * Merge branch 'magma'
+   * Update to upstream (July 11 2013)
+   * Delete broken kernels
+   * Remove unused directory
+   * Broken since updated build system
+   * Automatically generated by autogen
+   * Revert "Pass #2 at Kconfig clean-up"
+   * Revert "Warnings warnings go away..."
+   * Revert "Grrrrrrrrrrrrrrrrrrrr"
+   * Grrrrrrrrrrrrrrrrrrrr
+   * Warnings warnings go away...
+   * Pass #2 at Kconfig clean-up
+   * Force install of headers
+   * Revert "Repair x86/x86_64 kconfig madness"
+   * Revert "Whitespace fix"
+   * Whitespace fix
+   * Repair x86/x86_64 kconfig madness
+   * Fix-up the whole x86/x86_64 mess
+   * Properly remove init.c from liblxrt
+   * Fix compiling error
+   * Fix up ChangeLog
+   * Merge branch 'magma'
+   * Update magma (July 8 2013)
+   * Re-add 3.8.13 support
+   * Re-factor all patches
+   * Added quiet build to the rest of build process
+   * Further refactored Kconfig stuff
+   * Added troubleshooting page
+   * Added basic structure of the guide
+   * Added base for guide
+   * Removed unused Kconfig file
+   * Factored out many configurations
+   * Fixed clone not defined error
+   * Merge remote-tracking branch 'origin/master'
+   * Apply fix from magma to 3.8.13
+   * Merge branch 'magma'
+   * Modify date
+   * Add fixes from upstream magma
+   * Revert "Only create configure with autogen"
+   * Only create configure with autogen
+   * Fix build for >=3.8 kernels
+   * Revert "Fix build for >=3.8 kernels"
+   * Fix build for >=3.8 kernels
+   * Add x86 kernel support for 3.8.13
+   * Do I really need to fill this in?
+   * More minor whitespace clean-up
+   * Minor whitespace changes
+   * More intense whitespace changes
+   * Most intense whitespace clean-up ever
+   * Restore configure.ac to more original state
+   * Change source files to non-executables
+   * Add showroom again to README.md
+   * Don't generate a standard Makefile
+   * Revert "Remove dead code from GNUmakefile.am"
+   * Experimental is gone
+   * Oh look, whitespace...
+   * Merge branch 'magma'
+   * Re-add showroom
+   * Update magma (June 9 2013)
+   * Remove showroom to keep magma 100% upstream
+   * Newline code test
+   * More whitespace changes
+   * Remove more trailing whitespace
+   * Remove dead code from GNUmakefile.am
+   * Update lex.c_shipped
+   * Update zconf.tab.c_shipped
+   * Remove automatically generated file
+   * Removed accidental copy-paste
+   * Fix installation of RTAI headers
+   * s/INCLUDES/AM_CPPFLAGS/
+   * Fix RTAI_VERSION strings
+   * Remove trailing whitespace again
+   * Added that magma is also followed
+   * This should fix RTDM's dependency on __FD* stuff
+   * Reintroduced math fix for glibc 2.15
+   * Aligned with magma (Jun 4, 2013)
+   * Based magma off of vulcano
+   * Further short build output in kconfig
+   * Built basis for quiet compilation mode
+   * Fixed menuconfig on fresh directory
+   * Fix distclean for kconfig
+   * So they don't miss it ;)
+   * Update README.INSTALL
+   * Fix updated build system
+   * Update README.md again
+   * Revert "Apparently not used anymore."
+   * Apparently not used anymore.
+   * Fix new linebreaks in GNUmakefile.am
+   * Fix a compiling error
+   * Minor clean-up of configure.ac
+   * Re-work OpenGL / Mesa stuff again
+   * Add clean / distclean to kconfig
+   * Fix make menuconfig compiling errors
+   * Added other config targets
+   * Updated Kconfig to match Kernel 3.9
+   * Lowered requirement of autoconf to 2.68
+   * Remove all whitespace from tree
+   * Clean up Makefile.am
+   * Update README.INSTALL
+   * Change AC_PREREQ to 2.60
+   * Remove non-MMU support
+   * Remove all CROSS_COMPILE support
+   * Fix a typo in README.md
+   * Update README.md file
+   * Remove more dead code
+   * Add .config files to .gitignore
+   * Remove now dead code
+   * Re-enable automatic configure
+   * Purge RTAI_MATH_KMOD_CFLAGS
+   * Add new line at end of makefile.am
+   * Get make menuconfig working again
+   * Re-add removed scripts
+   * Do not automatically run configure
+   * Add more files to .gitignore
+   * Remove all *file.in files from tree
+   * Continue removing rtai-sim
+   * Continue re-working build system
+   * Remove rtai-sim
+   * Fix build system more
+   * Change makefile to Makefile
+   * Update build system
+   * Merge remote-tracking branch 'origin/vulcano'
+   * Align with vulcano (May 8 2013)
+   * Added math module include flags to rtai-config.in
+   * Removed work on kernel patches since Paolo already did it
+   * Missing include of linux/sched.h
+   * Removed _FORTIFY_SOURCE warning
+   * Added history of changes to x86 kernel patch
+   * Fixed missing }
+   * Proposed a fix for CONFIG_CPUMASK_OFFSTACK=y
+   * Typos
+   * Added rt_get_exectime()
+   * Merge remote-tracking branch 'origin/master'
+   * Fixed missing nam2num bugs in named_rwl/spl_init
+   * Update README.md
+   * .gitignore now covers all
+   * Fixed math module's compile problem
+   * Math modules compiles, but has errors
+   * Working on making the math module compile
+   * Working on getting math module compiled
+   * Merge branch 'vulcano'
+   * Removed CVS directory
+   * Update to Vulcano snapshot of Oct 18, 2012
+Checksums-Sha1:
+ 70d4bbffce0cb77309cd0c6b27521167c0b7369e 615 rtai_3.9.265.gd99c55e.dsc
+ 38d8a42c97e727a9510770b9bc1a8fa4f9109914 5806966 rtai_3.9.265.gd99c55e.tar.gz
+Checksums-Sha256:
+ d9bff67091a544f1c722fa98156c20a6668a8fe68f9f55861dd95389f297af76 615 rtai_3.9.265.gd99c55e.dsc
+ dfbdfc7976c3a06c5a906d4e265efb52d11a0bf1ee6380046645c433ccfdeac2 5806966 rtai_3.9.265.gd99c55e.tar.gz
+Files:
+ 7541867a64a4e940596c726c07584c3e 615 misc extra rtai_3.9.265.gd99c55e.dsc
+ 0c34894469aedf24f8240c68b065b538 5806966 misc extra rtai_3.9.265.gd99c55e.tar.gz

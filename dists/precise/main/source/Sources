@@ -1,0 +1,59 @@
+Package: kernel-wedge
+Binary: kernel-wedge
+Version: 2.84
+Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
+Build-Depends: debhelper (>= 7.0.0)
+Architecture: all
+Standards-Version: 3.9.2
+Format: 1.0
+Directory: dists/precise/main/source
+Files:
+ 03489f54902e82323e52ad360e43e2f8 779 kernel-wedge_2.84.dsc
+ f78823c8deca84989f40ba8f84d7cc15 39843 kernel-wedge_2.84.tar.gz
+Uploaders: Steve Langasek <vorlon@debian.org>, Otavio Salvador <otavio@debian.org>, Ben Hutchings <ben@decadent.org.uk>
+Vcs-Browser: http://git.debian.org/?p=d-i/kernel-wedge.git
+Vcs-Git: git://git.debian.org/d-i/kernel-wedge.git
+Package-List:
+ kernel-wedge deb utils optional arch=all
+Checksums-Sha1:
+ 2bec21966f23b9210c95bf44fe659687a886c2be 779 kernel-wedge_2.84.dsc
+ d0c58221b5ac31f367a030bf7a43277d4c079b41 39843 kernel-wedge_2.84.tar.gz
+Checksums-Sha256:
+ 8559ca4358ca0f9249c1765b29ae65e3030ba11f8dd08062bf1e698979014a01 779 kernel-wedge_2.84.dsc
+ d0f660a01c56f7a047eabee2ee15604c5b113886609110a2f3e13602a33aef54 39843 kernel-wedge_2.84.tar.gz
+Checksums-Sha512:
+ 31e8fc0deaebcf67839f2242e4dae950ace3d7404ba76edd71d4b6c5ea6c84c0e1d44b23dbee4c3b606973d5e3089f49a75bef71b816ce7711d57ec5b9e69269 779 kernel-wedge_2.84.dsc
+ de7dcb369a7ff2e46681b75fbc7ec8b90047c23c11ff372f44c9f846ad939cb6c955264d638a8664dbe9b5acda0e459569e9d8bc46e14c2d6b46a88a13c5a115 39843 kernel-wedge_2.84.tar.gz
+
+Package: kmod
+Binary: kmod, module-init-tools, libkmod2, libkmod-dev, libkmod2-udeb
+Version: 9-3
+Maintainer: Marco d'Itri <md@linux.it>
+Build-Depends: debhelper (>> 8.1.3)
+Architecture: linux-any all
+Standards-Version: 3.9.3.1
+Format: 3.0 (quilt)
+Directory: dists/precise/main/source
+Files:
+ 82ae879cb5f57489b0805e4db4d2895c 994 kmod_9-3.dsc
+ c8ae2d2694fbca2b28e238b30543a0cd 1122668 kmod_9.orig.tar.xz
+ e1ef28e4448c73af48e86810e29791cc 10900 kmod_9-3.debian.tar.xz
+Package-List:
+ kmod deb admin important arch=linux-any
+ libkmod-dev deb libdevel optional arch=linux-any
+ libkmod2 deb libs important arch=linux-any
+ libkmod2-udeb udeb debian-installer important arch=linux-any
+ module-init-tools deb admin extra arch=all
+Checksums-Sha1:
+ 8674ef0485c241aacd43c0161e32258da7f5047c 994 kmod_9-3.dsc
+ da459d3c0b6fd20176dfbb85dd06a81b11635fa6 1122668 kmod_9.orig.tar.xz
+ 09206476bf4c96293462bafd7779e08225b9d443 10900 kmod_9-3.debian.tar.xz
+Checksums-Sha256:
+ c0e7e5dec3ef81ed96120bf2eaa48ccbcfdf1ca94a39219d4544707f1b7edc57 994 kmod_9-3.dsc
+ 0607267cb62dbc9009d0719f442a56f97f64d9983e20dbcaedfff9073abdcecf 1122668 kmod_9.orig.tar.xz
+ 6b8b741bb625a80d321a9ff018d473691ec8c842fe2e9a03b085cd879ba56e49 10900 kmod_9-3.debian.tar.xz
+Checksums-Sha512:
+ 95bd0d941aff9443da9dc96f63bde84f0e033d212035d97044933573c7dc57c2064d66ca22f6c871180e64721cf204d7015f2de161008e17bc18394ed6a6ae61 994 kmod_9-3.dsc
+ 912404830d46ab27f9472a4ce0272c03b16b36291069f9cf1a51bc533429fe8f46d7a749edc399fb1631a435dea4077728d0a5b16961603fdde339d3e2b14f1f 1122668 kmod_9.orig.tar.xz
+ 92109c4a362f7af8f1ab16a87dfdef8d1e013ba511e27d08c6f36ba2a1a556dd5dc1eb109b0a816c5d853e2d942f99319df88e4aa553827ce9eb8f67f20b8471 10900 kmod_9-3.debian.tar.xz
+

@@ -1,0 +1,331 @@
+
+= Linux/RTAI debian package builder
+
+This is a big clumsy system for building debian packages of the Linux
+kernel patched with RTAI, and the RTAI userspace.
+
+It is inspired by John Morris' similar build system.
+
+At the top level (the repo you're looking at right now) there's a Makefile
+that knows how to fetch various hacked upstream sources and build debs
+from them.
+
+This Makefile does all building inside pbuilder chroots.
+
+The things it fetches and builds are:
+
+    * linux (tarball from kernel.org, debian/ directory from seb's repo
+        based on debian.org's svn repo)
+
+    * linux-tools (used for building out-of-tree kernel modules, we use
+        a specific version of debian.org's package, plus some minor
+        tweaks)
+
+    * kmod (manages kernel modules)
+
+    * rtai (based on the ShabbyX repo, but a special branch that adds
+        debian packaging)
+
+
+= Using this system to build Linux/RTAI
+
+First build kernel-wedge and kmod (needed to build the kernel on Precise).
+This step is needed the first time only.
+
+-----
+make kernel-wedge.deb
+make kmod.deb
+-----
+
+Then build the linux kernel.  This uses the kernel.org tarball, with
+packaging provided by a local git repo based on Debian's packaging of
+the linux kernel.  Our local debian packaging of the linux kernel adds
+the rtai patch and not much else.
+
+-----
+make linux.deb
+-----
+
+Then build linux-tools.  This step is needed the first time you build
+a new X.Y kernel version (for example, you need a linux-tools for 3.4,
+another for 3.14, etc).
+
+-----
+make linux-tools.deb
+-----
+
+Finally build RTAI.
+
+-----
+make rtai.deb
+-----
+
+
+= Modifying/updating Linux or RTAI
+
+The original packaging of Linux/RTAI targets Linux 3.4.87 and RTAI 4.0
+*plus* the ShabbyX/memleak mods.  So not RTAI 4.0 from Paolo.
+
+I currently have the following RTAI branches:
+
+    * old-3.9-debs
+
+        This branch successfully builds debs.  It starts with what i build
+        3.4.55-rtai-2 from, plus:
+
+        * support 3.4.87
+
+        * build in pbuilder (build against linux-headers instead of a built
+            linux source tree, improved build-dependencies, add
+            debian/configure like in linuxcnc)
+
+    * deb-packaging
+
+        Rebased, cleaned up version of old-3.9-debs.
+
+        This is the good one.
+
+    * shabby/linuxcnc-old
+
+        This is basically the tree from the old known-good commit
+        a0dc5355, with the kernel patch bumped to 3.4.96.
+
+
+== Modifying/updating Linux
+
+The linux/linux-$(LINUX_VERSION/debian directory is a checkout of a
+git branch.  The git repo is cloned and the branch checked out by make
+when the debian/ directory does not exist, and is left alone otherwise.
+
+The git repo & branch the the debian/ directory is initialized to (if
+it does not exist) are configured at the top of the top-level Makefile.
+
+The original debian/ packaging for Linux 3.4.87 with the rtai
+4.0-shabby-111-g44557fc kernel patch was created from the Debian kernel
+packaging repo:
+
+    http://anonscm.debian.org/viewvc/kernel/
+
+To access this SVN repo via git add this to your .git/config:
+
+-----
+    [svn-remote "dists-trunk"]
+        url = svn://anonscm.debian.org/svn/kernel/dists/trunk/linux/debian/
+        fetch = :refs/remotes/dists-trunk
+-----
+
+The original packaging was branched from r19214, which was the last
+commit of the upstream packaging to support the 3.4 kernel.
+
+Good info on working with the Debian packaging of the Linux kernel is
+available in the Debian Linux Kernel Handbook:
+
+    http://kernel-handbook.alioth.debian.org/
+
+Also here:
+
+    https://wiki.debian.org/HowToRebuildAnOfficialDebianKernelPackage
+
+Building the linux kernel for Precise requires the kmod package from
+Wheezy.
+
+=== Changing the kernel config
+
+Here are the instructions on changing kernel configs:
+
+    http://kernel-handbook.alioth.debian.org/ch-common-tasks.html#s4.2.3
+
+It might be easiest to do these inside pbuilder for the build dependencies
+to work out right:
+
+-----
+# outside the chroot:
+make linux.dsc
+make pbuilder/$(DIST)/$(ARCH)/login
+# copy the dsc into tmp/ in the chroot, which lives in tmp/$(PID)
+
+# inside the chroot login:
+cd /tmp
+dpkg-source -x *.dsc
+cd linux-*
+dpkg-checkbuilddeps
+# install missing build deps
+apt-get install libncurses-dev
+debian/rules source
+make -f debian/rules.gen setup_i386_rtai_686-pae
+make -C debian/build/build_i386_rtai_686-pae/ oldconfig
+make -C debian/build/build_i386_rtai_686-pae/ menuconfig
+-----
+
+FIXME: That makes a new .config, i wonder how to split it up into the
+various files in debian/config?  You could diff .config and .config.old
+to see what settings you changed, then change those in the already-split
+files?  I wonder how to choose which settings go in which files, and
+what happens if a setting is in multiple files.
+
+
+==  linux-tools
+
+The linux-tools packaging is from the upstream debian packaging.
+
+Add this to .git/config:
+
+-----
+    [svn-remote "dists-trunk"]
+    url = svn://svn.debian.org/svn/kernel/dists/trunk/linux-tools/debian/
+    fetch = :refs/remotes/dists-trunk
+-----
+
+The most recent commit in linux-tools dists-trunk that applies to linux
+3.4 is r19111, fcdbb9d49df93aa5801157ecd0d7b4f97754f5ab, so create a
+3.4 branch from that.
+
+Cherry-picked 784d0fc795fb7b8b9f6a6186335caa171c16225c (adds .tar.xz
+support).
+
+
+== RTAI
+
+I'm choosing to base my debs on the ShabbyX RTAI repo:
+https://github.com/ShabbyX/RTAI.git
+
+=== The RTAI packages in Ubuntu and Debian are no good
+
+precise: 3.8.1
+trusty: 3.9.1 (kernel patches are too old)
+
+wheezy: 3.8.1
+sid: 3.9.1
+
+These packages provide the RTAI userspace libraries and headers as binary
+debs, but provide the kernel modules only in source form.  These kernel
+sources are to be built with module-assistant, but it doesn't work out
+of the box for me, and i've no interest in taking this path.
+
+=== RTAI for LinuxCNC
+
+My old (3.4.55-rtai-2) shitty rtai kernel debs are of commit
+a0dc5355ee233032926dd23d1e132ef1befbbd76.  That commit used to be in the
+master branch, now it's in a branch called "old-master".  It looks like
+master was rebased and that commit corresponds to 223f5d73 (in master) now.
+
+My branch is called prerelease-7, but it doesnt work so use old-3.9-debs
+instead.
+
+A reasonable version number for it would be
+"3.9-shabby-memleak-2013.12.13"
+
+My old rtai debs were based on:
+
+    mozmck's (jepler's?) old debianization of rtai
+
+    make-kpkg to build the kernel deb
+
+    My process:
+
+        fetch the rtai git repo
+
+        fetch the linux tarball
+
+        apply rtai patch to linux source
+
+        build linux debs with make-kpkg
+
+        install linux-headers
+
+        build rtai-modules
+
+
+= Old notes to self
+
+== linux
+
+    To build all debs:
+
+        DEB_BUILD_OPTIONS=parallel=$(($(nproc)*2)) fakeroot debian/rules binary
+
+    To build just a particular deb:
+
+        DEB_BUILD_OPTIONS=parallel=$(($(nproc)*2)) fakeroot make -f debian/rules.gen binary-arch_amd64_rtai   
+
+
+= Open Issues
+
+== Why does pbuilder re-create the dsc, but differently?
+
+The .orig.tar.xz is the same but the other files have different md5sums.
+
+== build rtai-modules for the rtai-486 linux-image package
+
+== try to get amd64 going again
+
+64-bit math problems:
+* http://psha.org.ru/irc/%23emc-devel/2014-03-25.html#23:10:36
+* http://article.gmane.org/gmane.linux.real-time.rtai/22724
+* http://article.gmane.org/gmane.linux.real-time.rtai/26416
+
+== what's up with hyperv?
+
+Why isn't hid-hyperv getting built any more?  It's in the 3.4.87 kernel,
+and i didn't change the config.  There are other hyperv modules getting built.
+
+== linux: turn off the 'none' featureset, it just wastes build time
+
+== download all orig things into /orig, so they're easier to save on 'make clean'
+
+== Make a new install-%-deb target, for all to use
+
+Should this target remove any existing debs from dists/%/?  Probably not?
+
+== usb is broken on skunkworks' machine
+
+http://psha.org.ru/irc/%23emc-devel/2014-07-03.html#15:22:31
+
+3.4.55-2linuxcnc:
+
+    [15:22:31] <skunkworks> cradek, jepler, usb ports don't work with rtai kernel - do work with the debian -rt kernel... 
+
+3.4.55-3linuxcnc:
+
+    added these:
+
+    CONFIG_USB_OHCI_HCD_PLATFORM=y
+    CONFIG_USB_EHCI_HCD_PLATFORM=y
+
+    still didnt fix it for skunkworks
+
+    2014-07-10:
+
+        08:00 < pcw_home> stock 10.04 with 2.6.32 RTAI definitely doesn't work
+        08:06 < pcw_home> Even some older stock kernels dont work (the 3.2 that comes with 12.04 doesnt work)
+        08:06 < pcw_home> It may be asking a lot to have RTAI support for the JXXXX CPUs since they are so new
+        
+    but the fact that it works on debian's 3.2 kernel makes me think it could work for us too
+
+https://bugzilla.redhat.com/show_bug.cgi?id=1039245
+
+PCI_IOAPIC is off
+
+bunch of ACPI things
+
+PCI_MSI is off
+
+
+== rtai package fixup
+
+The rtai-modules package is matched to a kernel version, like
+'3.4-9-rtai-686-pae'.  This is reflected in the package name and
+dependencies, and that's good.
+
+It should install in a place that doesnt conflict with other versions
+of itself, just like you can have multiple kernels installed.
+
+It currently installs files in:
+
+    /etc/udev/rules.d (make this one rtai-modules-common?)
+    /usr/realtime-$VERSION
+
+== update-deb-archive doesn't need ARCH
+
+The makefile stamps do
+

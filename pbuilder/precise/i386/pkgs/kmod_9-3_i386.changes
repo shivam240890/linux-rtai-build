@@ -1,0 +1,53 @@
+Format: 1.8
+Date: Sun, 07 Apr 2013 18:19:01 +0200
+Source: kmod
+Binary: kmod module-init-tools libkmod2 libkmod-dev libkmod2-udeb
+Architecture: source i386 all
+Version: 9-3
+Distribution: unstable
+Urgency: low
+Maintainer: Marco d'Itri <md@linux.it>
+Changed-By: Marco d'Itri <md@linux.it>
+Description: 
+ kmod       - tools for managing Linux kernel modules
+ libkmod-dev - libkmod development files
+ libkmod2   - libkmod shared library
+ libkmod2-udeb - libkmod shared library (udeb)
+ module-init-tools - transitional dummy package (module-init-tools to kmod)
+Closes: 674110 683972 689872 697750
+Changes: 
+ kmod (9-3) unstable; urgency=low
+ .
+   * Added backported patch dot_kcmdline: correctly parse kcmdline parameters
+     containing a dot. (Closes: #689872)
+   * Added backported patch bad_alias_assertion: stop modprobe from aborting
+     from an assertion because of some invalid but common configuration
+     directives. (Closes: #674110)
+   * Removed the nfs4 alias from aliases.conf as requested by the kernel
+     team. (Closes: #683972)
+   * Removed the unnecessary build-dependency on perl. (Closes: #697750)
+Checksums-Sha1: 
+ e378e637707d4d1c8ececb81f35212a8912625d9 929 kmod_9-3.dsc
+ 186c4e01a27b491fa63f2c897467d836434b287e 11883 kmod_9-3.debian.tar.gz
+ 54aaea632929fb13bdb0233db43cba6509a37de5 59906 kmod_9-3_i386.deb
+ c08ad024e122b097321ea43986b559d1fb01c6a9 1798 module-init-tools_9-3_all.deb
+ 5d30ea67fcd79ddb00840f2b93ce9cf3d9a608c1 49344 libkmod2_9-3_i386.deb
+ 05eeb2bcf5f3910b06fb1f2655107cf2a02f7e26 61688 libkmod-dev_9-3_i386.deb
+ 2725ffbf142e18d8b95dac9c6e55ca1ded37ac5d 52750 libkmod2-udeb_9-3_i386.udeb
+Checksums-Sha256: 
+ bff9dc74d7c3da3eb9c0a60646cc196e16ded2b1c73815239d85a3a6ded276bc 929 kmod_9-3.dsc
+ 02e2e18c557b02b9c7d1893b81ada15f0ccb82fc33503fefc1a04007b8f2d620 11883 kmod_9-3.debian.tar.gz
+ cdfdcca81d333d15845bbb69f8810b66c022c343ae56b5e77dbd1fa32c6db48e 59906 kmod_9-3_i386.deb
+ f18a6dd1c180ab09dfc69f0d3baa552a0bf72efde9d2da4bfee2bd56a9c77b0f 1798 module-init-tools_9-3_all.deb
+ 1ca431c2e98544e53b331cd3d4f21303683a4010bc3c30f39313b4f23da9042e 49344 libkmod2_9-3_i386.deb
+ 5f47eff1ba0bfd02a1220c5b4bf8157f7ab03995f733aa66efa8c04f6d346849 61688 libkmod-dev_9-3_i386.deb
+ 64aa4bab391d158d1dc1f07a26f12dd1f0c711e55fbf6d775fc03fae0f47ad19 52750 libkmod2-udeb_9-3_i386.udeb
+Files: 
+ 99ce4c09919fb70f89e394eb0dd42dd8 929 admin important kmod_9-3.dsc
+ a5d8cb89791e7f807dcfc3f94a0ce43f 11883 admin important kmod_9-3.debian.tar.gz
+ b52986c3f621939b42652925a861f83e 59906 admin important kmod_9-3_i386.deb
+ 2b830fd13266d8b35abbfd15ddb9d5ca 1798 admin extra module-init-tools_9-3_all.deb
+ 01714dd18c5e2ea14dd6278e6efed635 49344 libs important libkmod2_9-3_i386.deb
+ 435545ac9d0e7906d7bf835d8e6f8bc3 61688 libdevel optional libkmod-dev_9-3_i386.deb
+ 66063a49dd3c922ef876f5988755fce7 52750 debian-installer important libkmod2-udeb_9-3_i386.udeb
+Package-Type: udeb

@@ -1,0 +1,32 @@
+Format: 1.8
+Date: Sun, 03 Jun 2012 01:42:31 +0100
+Source: kernel-wedge
+Binary: kernel-wedge
+Architecture: source
+Version: 2.84
+Distribution: unstable
+Urgency: low
+Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
+Changed-By: Ben Hutchings <ben@decadent.org.uk>
+Description:
+ kernel-wedge - udeb package builder for Debian-Installer
+Closes: 651439
+Changes:
+ kernel-wedge (2.84) unstable; urgency=low
+ .
+   [ Joey Hess ]
+   * Removed all the linux module list files. These have moved to the
+     linux-2.6 source package (see debian/installer/ there).
+     Closes: #651439
+ .
+   [ Ben Hutchings ]
+   * copy-modules: Skip Linux modules that are really built-in
+Checksums-Sha1:
+ 2bec21966f23b9210c95bf44fe659687a886c2be 779 kernel-wedge_2.84.dsc
+ d0c58221b5ac31f367a030bf7a43277d4c079b41 39843 kernel-wedge_2.84.tar.gz
+Checksums-Sha256:
+ 8559ca4358ca0f9249c1765b29ae65e3030ba11f8dd08062bf1e698979014a01 779 kernel-wedge_2.84.dsc
+ d0f660a01c56f7a047eabee2ee15604c5b113886609110a2f3e13602a33aef54 39843 kernel-wedge_2.84.tar.gz
+Files:
+ 03489f54902e82323e52ad360e43e2f8 779 utils optional kernel-wedge_2.84.dsc
+ f78823c8deca84989f40ba8f84d7cc15 39843 utils optional kernel-wedge_2.84.tar.gz

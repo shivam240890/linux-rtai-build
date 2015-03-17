@@ -1,0 +1,55 @@
+Package: linux-tools
+Binary: linux-kbuild-3.4, linux-tools-3.4
+Version: 3.4-linuxcnc2
+Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
+Build-Depends: debhelper (>> 7), python, asciidoc, binutils-dev, bison, flex, libdw-dev, libelf-dev, libnewt-dev, libperl-dev, python-dev, xmlto
+Architecture: linux-any
+Standards-Version: 3.9.2
+Format: 3.0 (quilt)
+Directory: dists/wheezy/main/source
+Files:
+ 30eadda239653e8b76e2f194af579813 1343 linux-tools_3.4-linuxcnc2.dsc
+ 1f6cfe1dd6b43d4f0eb0c13ba9fc1dde 6376568 linux-tools_3.4.orig.tar.xz
+ 984007320d29ee29e4870e303fe948a2 16748 linux-tools_3.4-linuxcnc2.debian.tar.xz
+Uploaders: Bastian Blank <waldi@debian.org>, Ben Hutchings <ben@decadent.org.uk>
+Vcs-Browser: http://anonscm.debian.org/viewvc/kernel/dists/trunk/linux-tools/
+Vcs-Svn: svn://svn.debian.org/svn/kernel/dists/trunk/linux-tools/
+Package-List:
+ linux-kbuild-3.4 deb devel optional arch=linux-any
+ linux-tools-3.4 deb devel optional arch=alpha,amd64,armel,armhf,hppa,i386,powerpc,ppc64,s390,s390x,sh4,sparc,sparc64
+Checksums-Sha1:
+ 0e7b1c1f55bc1328226baff12ddd5e8cfbee16cd 1343 linux-tools_3.4-linuxcnc2.dsc
+ e02cfdc943d0c0b6b5a1516de2f4c389a51d814c 6376568 linux-tools_3.4.orig.tar.xz
+ e5503b8ed0df73052e360a78b14430a9bd6d0b03 16748 linux-tools_3.4-linuxcnc2.debian.tar.xz
+Checksums-Sha256:
+ 54b6cd18b6365aa8416245c67fca2ec9430015d9849b512354115649de26e4e0 1343 linux-tools_3.4-linuxcnc2.dsc
+ 5b488e76d0ca72673850871bc53213b25b586a752cac025368b47da613a1d920 6376568 linux-tools_3.4.orig.tar.xz
+ 0d250c3f04b62e93db46c98c1d4cbe4d32d8f4d9736e4de782fe07d73f5ce357 16748 linux-tools_3.4-linuxcnc2.debian.tar.xz
+Checksums-Sha512:
+ 4c577087b1424ae86571d470cbe16c6f338b98a3d5e11e6f33429961b938f94a9dba3dc4ffe6427fc404dd96f88a55d75650bf2d581ce58af8092b31907830b3 1343 linux-tools_3.4-linuxcnc2.dsc
+ 8408c2075709fbf19f89a7ffdec94b00795ff8264cf5e2f9eba47dbdc04fa8738372200f716799d391ea522faeebaefaa3554ad5ec4d9ee0151ae8fa3f990543 6376568 linux-tools_3.4.orig.tar.xz
+ dcd4cb7db5747122a0f2c97ad4868c7d4235335ae9c95d53673dc5c9dc77cbf27dbe30c3b227e3658283559a944f310c7b93253cc588e849133703d0ff424bd5 16748 linux-tools_3.4-linuxcnc2.debian.tar.xz
+
+Package: rtai
+Binary: rtai-modules-3.4-10-rtai-686-pae
+Version: 3.9.265.gd99c55e
+Maintainer: Sebastian Kuzminsky <seb@highlab.com>
+Build-Depends: debhelper, automake, autoconf, libtool, linux-headers-3.4-10-rtai-686-pae
+Architecture: any
+Format: 1.0
+Directory: dists/wheezy/main/source
+Files:
+ 7541867a64a4e940596c726c07584c3e 615 rtai_3.9.265.gd99c55e.dsc
+ 0c34894469aedf24f8240c68b065b538 5806966 rtai_3.9.265.gd99c55e.tar.gz
+Package-List:
+ rtai-modules-3.4-10-rtai-686-pae deb misc extra arch=any
+Checksums-Sha1:
+ 70d4bbffce0cb77309cd0c6b27521167c0b7369e 615 rtai_3.9.265.gd99c55e.dsc
+ 38d8a42c97e727a9510770b9bc1a8fa4f9109914 5806966 rtai_3.9.265.gd99c55e.tar.gz
+Checksums-Sha256:
+ d9bff67091a544f1c722fa98156c20a6668a8fe68f9f55861dd95389f297af76 615 rtai_3.9.265.gd99c55e.dsc
+ dfbdfc7976c3a06c5a906d4e265efb52d11a0bf1ee6380046645c433ccfdeac2 5806966 rtai_3.9.265.gd99c55e.tar.gz
+Checksums-Sha512:
+ c496ab91f68b314fe900231c99b9e496bf75fafb089a6c53f703bb7aed5b87c4b9c25993b8b388860fda8d3515e6fa07158a495486a594146c3a38984c8b40ba 615 rtai_3.9.265.gd99c55e.dsc
+ 6035a1505ad072a9374032a91b254209cc1499bba7e55c1c58b9a17489f932441ab2bf30b1286dbfecc99c6dccf53dfcbc128767eeabca06021790747fab63f6 5806966 rtai_3.9.265.gd99c55e.tar.gz
+

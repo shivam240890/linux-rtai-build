@@ -1,0 +1,29 @@
+Format: 1.8
+Date: Thu, 12 Jun 2014 22:33:04 -0600
+Source: linux-tools
+Binary: linux-kbuild-3.4 linux-tools-3.4
+Architecture: source
+Version: 3.4-linuxcnc2
+Distribution: UNRELEASED
+Urgency: low
+Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
+Changed-By: Sebastian Kuzminsky <seb@highlab.com>
+Description:
+ linux-kbuild-3.4 - Kbuild infrastructure for Linux 3.4
+ linux-tools-3.4 - Performance analysis tools for Linux 3.4
+Changes:
+ linux-tools (3.4-linuxcnc2) UNRELEASED; urgency=low
+ .
+   * cherry-picked 784d0fc795fb7b8b9f6a6186335caa171c16225c:
+     * genorig: Accept xz-compressed upstream tarballs and patches, and
+       generate an xz-compressed orig tarball, thanks to Sedat Dilek
+     * source: Enable xz-compression for debian directory tarball
+Checksums-Sha1:
+ 0e7b1c1f55bc1328226baff12ddd5e8cfbee16cd 1343 linux-tools_3.4-linuxcnc2.dsc
+ e5503b8ed0df73052e360a78b14430a9bd6d0b03 16748 linux-tools_3.4-linuxcnc2.debian.tar.xz
+Checksums-Sha256:
+ 54b6cd18b6365aa8416245c67fca2ec9430015d9849b512354115649de26e4e0 1343 linux-tools_3.4-linuxcnc2.dsc
+ 0d250c3f04b62e93db46c98c1d4cbe4d32d8f4d9736e4de782fe07d73f5ce357 16748 linux-tools_3.4-linuxcnc2.debian.tar.xz
+Files:
+ 30eadda239653e8b76e2f194af579813 1343 devel optional linux-tools_3.4-linuxcnc2.dsc
+ 984007320d29ee29e4870e303fe948a2 16748 devel optional linux-tools_3.4-linuxcnc2.debian.tar.xz

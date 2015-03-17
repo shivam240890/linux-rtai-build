@@ -1,0 +1,68 @@
+Architectures: amd64 i386 source
+Codename: precise
+Components: main
+Date: Thu, 12 Mar 2015 15:56:35 UTC
+Description: Linux/RTAI for Ubuntu Precise
+Label: Linux/RTAI kernel for Ubuntu Precise
+Origin: Sebastian Kuzminsky <seb@highlab.com>
+Suite: stable
+MD5Sum:
+ d41d8cd98f00b204e9800998ecf8427e                0 Release
+ 0902e5a0182062319472ac442793db1b               28 main/Contents-amd64.bz2
+ e62ff0123a74adfc6903d59a449cbdb0               40 main/Contents-amd64.gz
+ c188d1a12e8e39625b8b45b6270ba980              905 main/Contents-i386.bz2
+ 214b33a5d3ef4ff9554296e2b152c8a8              831 main/Contents-i386.gz
+ d41d8cd98f00b204e9800998ecf8427e                0 main/binary-amd64/Packages
+ 0902e5a0182062319472ac442793db1b               28 main/binary-amd64/Packages.bz2
+ e62ff0123a74adfc6903d59a449cbdb0               40 main/binary-amd64/Packages.gz
+ 6e000361a36c49a6481b760435d3b0ab             3840 main/binary-i386/Packages
+ 4335080a918f40ee9855415f561efd19             1855 main/binary-i386/Packages.bz2
+ b79779f420ffb6f4856d4c4f21b2663a             1809 main/binary-i386/Packages.gz
+ 61108e76af63657fa285112b341707fa             3080 main/source/Sources
+ 140b263ccebbba98146bd710f7abc8d0             1614 main/source/Sources.bz2
+ da5b07600c453f92cfb09331f81ade2e             1522 main/source/Sources.gz
+SHA1:
+ da39a3ee5e6b4b0d3255bfef95601890afd80709                0 Release
+ dcddcbc89128ee4d36fe584b2a982131e8f70d53               28 main/Contents-amd64.bz2
+ e3f4c61a216c2c9613cd3bdd1420dde095b296b3               40 main/Contents-amd64.gz
+ 4a934117a1935d244f3b64bb2a25aca9fc970469              905 main/Contents-i386.bz2
+ 2f0f64cf6e8a9c66df25e54aea661bf2f1729353              831 main/Contents-i386.gz
+ da39a3ee5e6b4b0d3255bfef95601890afd80709                0 main/binary-amd64/Packages
+ dcddcbc89128ee4d36fe584b2a982131e8f70d53               28 main/binary-amd64/Packages.bz2
+ e3f4c61a216c2c9613cd3bdd1420dde095b296b3               40 main/binary-amd64/Packages.gz
+ c1b570a4c32187c7d2b87c3d99a385624cad00c6             3840 main/binary-i386/Packages
+ c15e10e872010018205ea050d0971b4f3c19cba7             1855 main/binary-i386/Packages.bz2
+ ffdceea0e5c31e04c9a37182caf2630adee1b22d             1809 main/binary-i386/Packages.gz
+ ae6f7221a649f10e918ec96faf5b7e9c0186ceb5             3080 main/source/Sources
+ 6268bd1acf04d8b557e5b170009d159b9d425ea3             1614 main/source/Sources.bz2
+ b4d3680b5763ec2e49ea0ceac211e86612bea8f6             1522 main/source/Sources.gz
+SHA256:
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 Release
+ f43ffa97e8272d81422a41aa2b1599c418bd3c361fe23ebdd391676379dfe771               28 main/Contents-amd64.bz2
+ e7ab72b8f37c7c9c9f6386fb8e3dfa40bf6fe4b67876703c5927e47cb8664ce4               40 main/Contents-amd64.gz
+ 3155e4e4423b6795e82f0a67daa3b65e30d02f1a907555ff8090bd0956cf35b6              905 main/Contents-i386.bz2
+ a631b4ee9479071861e01dd88a12dbb669a3d4e95952a548eaf00dcb619ae7ea              831 main/Contents-i386.gz
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 main/binary-amd64/Packages
+ f43ffa97e8272d81422a41aa2b1599c418bd3c361fe23ebdd391676379dfe771               28 main/binary-amd64/Packages.bz2
+ e7ab72b8f37c7c9c9f6386fb8e3dfa40bf6fe4b67876703c5927e47cb8664ce4               40 main/binary-amd64/Packages.gz
+ ba7a8a0c017db330d818eb1cc536f87f5b88aad886c85d1693440c8a7236d13e             3840 main/binary-i386/Packages
+ f4ebb483c8cfddf384b852902c7145202e6a7993b36741ab63c9caeb5112c2e7             1855 main/binary-i386/Packages.bz2
+ 138b58c5d79f5a527cb4f1d224e85e166fc295eb558b3f83b932ff23adf81fdb             1809 main/binary-i386/Packages.gz
+ d15608bd4f21152ac61d5e014ae5503a410bb6872773a018870f930183f1b1cd             3080 main/source/Sources
+ f01379e0a13ebd6042e969317356d31ede1790b910cdc175a75fd269d3395999             1614 main/source/Sources.bz2
+ 9aaf0964b4267b4ad0044ed53cbd0035a99f2a1f7492f6c5a0529d401615fc62             1522 main/source/Sources.gz
+SHA512:
+ cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 Release
+ 37a17e9952eed92a1dfa196475721d1f8a96a58aac1a17e46a5df6b466a26655f151cc0b3b3005e442cd01feadf28ca095df66df47b7582992e1ceacc2cc632f               28 main/Contents-amd64.bz2
+ 4837cb0c747b88cd66d2e8a7cb7fe2808a8fd9f967e467810a0dddfee9befdef8891f3be5c26e319d2ac8a869cb9e39d5ba1fb484db73231cec9fd66d1d5df33               40 main/Contents-amd64.gz
+ b82ff6f3c3f04871ed906b2c1aa93cb328ec42171eb3b62d753129d44d9a3f15ed498d7fe18ed4c8cd8cc50a99bb6470f00d7e35459b6a334fac1c7bbff55324              905 main/Contents-i386.bz2
+ d6587ed5ac014b7b0f243d0a766f4c362bb953b4314448ce4dff30dab3e8e8fa639211faaf84472e3e624a6d4128651e4840db3568b58081b886da6d016e251a              831 main/Contents-i386.gz
+ cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 main/binary-amd64/Packages
+ 37a17e9952eed92a1dfa196475721d1f8a96a58aac1a17e46a5df6b466a26655f151cc0b3b3005e442cd01feadf28ca095df66df47b7582992e1ceacc2cc632f               28 main/binary-amd64/Packages.bz2
+ 4837cb0c747b88cd66d2e8a7cb7fe2808a8fd9f967e467810a0dddfee9befdef8891f3be5c26e319d2ac8a869cb9e39d5ba1fb484db73231cec9fd66d1d5df33               40 main/binary-amd64/Packages.gz
+ dd757f11d597ec75d8eb5b6047f099b2690030a9c3ea40c4960bda07c18379e0fa9e14df7632919938ee32450d2927b83d8cff5f97e59d06e421d9b4d7b7b694             3840 main/binary-i386/Packages
+ d83c325e4145e13bf03392692d82cf60c910431b3b34d5828ff816f15137d08ce859df1e3e96ab1874416efc086db69df648cfdbd5ceb13efe3e5940c0e35cbb             1855 main/binary-i386/Packages.bz2
+ 125b94cc10850f0282306d23bdf48f9f7421e053efe4d63b3120a6cd3279100f3bea27beb3f3172950838fec37e3de810343a26cdda0e2dbc9c59d0beed8b4b7             1809 main/binary-i386/Packages.gz
+ 3e4901ed699db652ab9f5c4377adbc7c49e4f5b9a33e27180227f37f3130d27acf6282cc761dfe99fae1de7c61187687fa406b9ae54f9587a350f7bf5920d27e             3080 main/source/Sources
+ 5a345d9129cdc59c76045ee8ee8a9f0351129e8e07b991291a8075415350b358f6b34806d51c7887708abd33ee1fc02d8aaa80cacb41f47ed4d1646b94cd7abb             1614 main/source/Sources.bz2
+ ea9e4c66077c4a18f90d0f320fa39d1b97e2d619c89a23eaf4bbbbdde0247947dee10d4a0e4944fa281dc0c8d65c2b15f1f24f68d0fd0b402bc8e2eef63022fb             1522 main/source/Sources.gz

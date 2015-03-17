@@ -1,0 +1,101 @@
+Package: libkmod2
+Priority: important
+Section: libs
+Installed-Size: 130
+Maintainer: Marco d'Itri <md@linux.it>
+Architecture: i386
+Source: kmod
+Version: 9-3
+Depends: libc6 (>= 2.8)
+Pre-Depends: multiarch-support
+Filename: dists/precise/main/binary-i386/libkmod2_9-3_i386.deb
+Size: 49344
+MD5sum: 01714dd18c5e2ea14dd6278e6efed635
+SHA1: 5d30ea67fcd79ddb00840f2b93ce9cf3d9a608c1
+SHA256: 1ca431c2e98544e53b331cd3d4f21303683a4010bc3c30f39313b4f23da9042e
+SHA512: 90a919b7ed2341ddb7fe27e714a2aa8376cd3e315e270adbb36751198b91e984be99cceb379c8403db5b3a52e6b868592f35ac708c8ec028cce4bd7c0fc6de83
+Description: libkmod shared library
+ This library provides an API for insertion, removal, configuration and
+ listing of kernel modules.
+Multi-Arch: same
+
+Package: kmod
+Priority: important
+Section: admin
+Installed-Size: 188
+Maintainer: Marco d'Itri <md@linux.it>
+Architecture: i386
+Version: 9-3
+Replaces: module-init-tools (<< 4)
+Depends: libc6 (>= 2.8), libkmod2 (>= 6~), lsb-base (>= 3.0-6)
+Breaks: module-init-tools (<< 4)
+Filename: dists/precise/main/binary-i386/kmod_9-3_i386.deb
+Size: 59906
+MD5sum: b52986c3f621939b42652925a861f83e
+SHA1: 54aaea632929fb13bdb0233db43cba6509a37de5
+SHA256: cdfdcca81d333d15845bbb69f8810b66c022c343ae56b5e77dbd1fa32c6db48e
+SHA512: b2bc59342e6d2be8190c415cf0672cff1ed3075c035caabb5d2162e731efdebeafe2725047ca4a35504bad4bb98403a541d7a7b3eb8dde1483be2bea95b65d6b
+Description: tools for managing Linux kernel modules
+ This package contains a set of programs for loading, inserting, and
+ removing kernel modules for Linux.
+ It replaces module-init-tools.
+Multi-Arch: foreign
+
+Package: module-init-tools
+Priority: extra
+Section: admin
+Installed-Size: 31
+Maintainer: Marco d'Itri <md@linux.it>
+Architecture: all
+Source: kmod
+Version: 9-3
+Depends: libkmod2, kmod
+Pre-Depends: dpkg (>= 1.15.7.2)
+Filename: dists/precise/main/binary-i386/module-init-tools_9-3_all.deb
+Size: 1798
+MD5sum: 2b830fd13266d8b35abbfd15ddb9d5ca
+SHA1: c08ad024e122b097321ea43986b559d1fb01c6a9
+SHA256: f18a6dd1c180ab09dfc69f0d3baa552a0bf72efde9d2da4bfee2bd56a9c77b0f
+SHA512: 3c3f69db43cca278f368cf56cc01e2e413bb4e9164d8be0ce393ea88c8c2f1766139d02043f5de44f5bb192ebab92a1bc4e8910d6ecd78ad96609f34bd87184b
+Description: transitional dummy package (module-init-tools to kmod)
+ This dummy package is provided to support the transition from
+ module-init-tools to kmod and should be removed afterwards.
+
+Package: libkmod-dev
+Priority: optional
+Section: libdevel
+Installed-Size: 214
+Maintainer: Marco d'Itri <md@linux.it>
+Architecture: i386
+Source: kmod
+Version: 9-3
+Depends: libkmod2 (= 9-3)
+Filename: dists/precise/main/binary-i386/libkmod-dev_9-3_i386.deb
+Size: 61688
+MD5sum: 435545ac9d0e7906d7bf835d8e6f8bc3
+SHA1: 05eeb2bcf5f3910b06fb1f2655107cf2a02f7e26
+SHA256: 5f47eff1ba0bfd02a1220c5b4bf8157f7ab03995f733aa66efa8c04f6d346849
+SHA512: 7889f9f2b994b5e9bd749a6af9e9bb925b276632109a1901972f77ed0865bbba0cdb2854ea96cc6a0d8e5653d4ed99d14f173f157ceda3796c583a8a50d6472b
+Description: libkmod development files
+ This package contains the files needed for developing applications that
+ use libkmod.
+Multi-Arch: same
+
+Package: kernel-wedge
+Priority: optional
+Section: utils
+Installed-Size: 118
+Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
+Architecture: all
+Version: 2.84
+Depends: debhelper (>= 7.0.0), make
+Filename: dists/precise/main/binary-i386/kernel-wedge_2.84_all.deb
+Size: 43752
+MD5sum: 189f0f612c9b0a5b00c00927ee79c370
+SHA1: 841bbe22c90596588e29faf49a2d6e5f0f49fa0e
+SHA256: 2fbad8ddbce0974e571e36997172253649de0170c4cd23332bb3d42f74e8d2e5
+SHA512: 7c7c22c92203d19b21e41908be7ce0f036495c01aab750a10ae0c6c254223649f62b745ef594bb94e7c87fbb84c4b82375dee64f168bab2694191c3180ae866a
+Description: udeb package builder for Debian-Installer
+ kernel-wedge splits udeb packages out of a kernel image deb. The udebs
+ are used by the Debian-Installer.
+

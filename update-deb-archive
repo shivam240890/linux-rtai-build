@@ -1,0 +1,24 @@
+#!/bin/bash
+
+export KEY="$1"
+export DIST="$2"
+export ARCH="$3"
+
+if [ -z "$KEY" -o -z "$DIST" -o -z "$ARCH" ]; then
+    echo usage: update-deb-archve Key Dist Arch
+    exit 1
+fi
+
+rm -f $(find dists/$DIST/ -name 'Contents*')
+rm -f dists/$DIST/Release
+rm -f dists/$DIST/Release.gpg
+
+apt-ftparchive -o APT::FTPArchive::AlwaysStat=True -c apt-ftparchive.conf generate generate-$DIST.conf
+
+apt-ftparchive -o APT::FTPArchive::AlwaysStat=True -c release-$DIST.conf release dists/$DIST/ >| dists/$DIST/Release
+
+gpg --sign --default-key="$KEY" -ba -o dists/$DIST/Release.gpg dists/$DIST/Release
+
+mkdir -p stamps/$DIST/$ARCH
+touch stamps/$DIST/$ARCH/deb-archive
+

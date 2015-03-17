@@ -1,0 +1,44 @@
+Package: linux-kbuild-3.4
+Priority: optional
+Section: devel
+Installed-Size: 644
+Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
+Architecture: i386
+Source: linux-tools
+Version: 3.4-linuxcnc2
+Depends: libc6 (>= 2.7)
+Filename: dists/wheezy/main/binary-i386/linux-kbuild-3.4_3.4-linuxcnc2_i386.deb
+Size: 235268
+MD5sum: beefd01e9342f7dbeab8246e65990235
+SHA1: f2d893b8d4948b39ffaa081cdaa7b74625ff7488
+SHA256: 0d93fbd864ef3486c1573233c65deca8565004fd7bbaf4bc282ee9522659768f
+SHA512: 00ab08721d17c456fce75dd611b59e04294a9df2665d3a6c5df263d474ceff8721790e5699f88bb9fe2b43f738940be5d6441b1dba97fd85683755bf00c91f2c
+Description: Kbuild infrastructure for Linux 3.4
+ This package provides the kbuild infrastructure for the headers packages
+ for Linux kernel version 3.4.
+Multi-Arch: foreign
+
+Package: linux-tools-3.4
+Priority: optional
+Section: devel
+Installed-Size: 1061
+Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
+Architecture: i386
+Source: linux-tools
+Version: 3.4-linuxcnc2
+Depends: libc6 (>= 2.8), libdw1 (>= 0.143), libelf1 (>= 0.131), libnewt0.52, libperl5.14 (>= 5.14.2), libpython2.7 (>= 2.7), libslang2 (>= 2.2.4), perl, python (>= 2.6.6-7~)
+Recommends: linux-base (>= 3.4~)
+Suggests: linux-doc-3.4
+Filename: dists/wheezy/main/binary-i386/linux-tools-3.4_3.4-linuxcnc2_i386.deb
+Size: 443704
+MD5sum: 143a4f4aed9cd27a5ac32044e2b85eeb
+SHA1: 175ee9cbe04be046df4d540c42551fda0eb1958c
+SHA256: ea9826fcdd223d6996e94b7693ee9f35af7efa52e96e0aedffbcb869bebb5394
+SHA512: 0c58340c9132edb17907cbe1efe9964d7f6ea8edd943336c17ef7eeca31ab577fda14466422e0ee82ff1a628fe3e13ba52ebdbc6bde0194ab9b62f355c96fb47
+Description: Performance analysis tools for Linux 3.4
+ This package contains the 'perf' performance analysis tools for Linux
+ kernel version 3.4.
+ .
+ The linux-base package contains a 'perf' command which will invoke the
+ appropriate version for the running kernel.
+

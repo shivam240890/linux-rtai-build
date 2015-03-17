@@ -1,0 +1,35 @@
+Format: 1.8
+Date: Thu, 12 Jun 2014 22:33:04 -0600
+Source: linux-tools
+Binary: linux-kbuild-3.4 linux-tools-3.4
+Architecture: source i386
+Version: 3.4-linuxcnc2
+Distribution: UNRELEASED
+Urgency: low
+Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
+Changed-By: Sebastian Kuzminsky <seb@highlab.com>
+Description: 
+ linux-kbuild-3.4 - Kbuild infrastructure for Linux 3.4
+ linux-tools-3.4 - Performance analysis tools for Linux 3.4
+Changes: 
+ linux-tools (3.4-linuxcnc2) UNRELEASED; urgency=low
+ .
+   * cherry-picked 784d0fc795fb7b8b9f6a6186335caa171c16225c:
+     * genorig: Accept xz-compressed upstream tarballs and patches, and
+       generate an xz-compressed orig tarball, thanks to Sedat Dilek
+     * source: Enable xz-compression for debian directory tarball
+Checksums-Sha1: 
+ 2f716a8eadd0528562a9d180cd7e99752eff658b 1250 linux-tools_3.4-linuxcnc2.dsc
+ e5503b8ed0df73052e360a78b14430a9bd6d0b03 16748 linux-tools_3.4-linuxcnc2.debian.tar.xz
+ f2d893b8d4948b39ffaa081cdaa7b74625ff7488 235268 linux-kbuild-3.4_3.4-linuxcnc2_i386.deb
+ 175ee9cbe04be046df4d540c42551fda0eb1958c 443704 linux-tools-3.4_3.4-linuxcnc2_i386.deb
+Checksums-Sha256: 
+ f63ebee584b5a5cc1f78046afcf636dff871d6fbe0c52570c1f6930110d6df48 1250 linux-tools_3.4-linuxcnc2.dsc
+ 0d250c3f04b62e93db46c98c1d4cbe4d32d8f4d9736e4de782fe07d73f5ce357 16748 linux-tools_3.4-linuxcnc2.debian.tar.xz
+ 0d93fbd864ef3486c1573233c65deca8565004fd7bbaf4bc282ee9522659768f 235268 linux-kbuild-3.4_3.4-linuxcnc2_i386.deb
+ ea9826fcdd223d6996e94b7693ee9f35af7efa52e96e0aedffbcb869bebb5394 443704 linux-tools-3.4_3.4-linuxcnc2_i386.deb
+Files: 
+ b7f0f682db968d5e4bf0a782842c7551 1250 devel optional linux-tools_3.4-linuxcnc2.dsc
+ 984007320d29ee29e4870e303fe948a2 16748 devel optional linux-tools_3.4-linuxcnc2.debian.tar.xz
+ beefd01e9342f7dbeab8246e65990235 235268 devel optional linux-kbuild-3.4_3.4-linuxcnc2_i386.deb
+ 143a4f4aed9cd27a5ac32044e2b85eeb 443704 devel optional linux-tools-3.4_3.4-linuxcnc2_i386.deb
